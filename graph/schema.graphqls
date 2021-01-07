@@ -42,4 +42,5 @@ type Mutation {
   createUser(input: NewUser!): String!
   login(input: Login!): String
   refreshToken(input: RefreshTokenInput!): String!
+  deleteLink(id :ID! ):String!
 }

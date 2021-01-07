@@ -68,3 +68,17 @@ func GetAll() []Link {
 	}
 	return links
 }
+
+func (link *Link) Delete(id int) (int64, error) {
+
+	print(id)
+
+	res, err := database.Db.Exec("delete from Links where id = ?", id)
+	print(res)
+	if err != nil {
+		log.Fatal(err)
+	}
+	print("row deleted")
+	return res.RowsAffected()
+
+}
